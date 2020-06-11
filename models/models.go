@@ -112,11 +112,13 @@ func (report *Report) String() string {
 
 		totalApps += org.AppsCount()
 		totalInstances += org.InstancesCount()
+			
+		response.WriteString(
+		fmt.Sprintf("You are running %d apps in Org %s, with a total of %d instances.\n",
+			totalApps, len(report.Orgs), totalInstances))
 	}
 
-	response.WriteString(
-		fmt.Sprintf("You are running %d apps in %d org(s), with a total of %d instances.\n",
-			totalApps, len(report.Orgs), totalInstances))
+
 
 	return response.String()
 }
