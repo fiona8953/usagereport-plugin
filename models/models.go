@@ -115,7 +115,7 @@ func (report *Report) String() string {
 			
 		response.WriteString(
 		fmt.Sprintf("You are running %d apps in Org %s, with a total of %d instances.\n",
-			totalApps, len(report.Orgs), totalInstances))
+			totalApps, org.Name, totalInstances))
 	}
 
 
